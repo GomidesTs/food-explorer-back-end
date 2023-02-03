@@ -1,0 +1,19 @@
+{
+  "name": "food-explorer-back-end",
+  "version": "1.0.0",
+  "description": "The application we developed is a digital menu for a fictional restaurant, known as Food Explorer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "explorer",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Node.js",
+    "test"
+  ],
+  "author": "Tulio Gomides",
+  "license": "ISC"
+}
