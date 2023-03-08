@@ -1,4 +1,4 @@
-module.up = knex => knex.schema.createTable('ordersItems', table => {
+exports.up = knex => knex.schema.createTable('ordersItems', table => {
     table.increments('id')
 
     table.integer('order_id').references('id').inTable('orders').onDelete('CASCADE')
@@ -10,4 +10,4 @@ module.up = knex => knex.schema.createTable('ordersItems', table => {
     table.timestamp("created_at").default(knex.fn.now());
 })
 
-module.down = knex => knex.shema.dropTable('ordersItems')
+exports.down = knex => knex.schema.dropTable('ordersItems')

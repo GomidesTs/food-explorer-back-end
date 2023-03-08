@@ -1,5 +1,5 @@
-exports.up = knex.schema.createTable('orders', table => {
-    table.increments(id)
+exports.up = knex => knex.schema.createTable('orders', table => {
+    table.increments('id')
     table.integer('user_id').references('id').inTable('users')
 
     table.text('orderStatus')
