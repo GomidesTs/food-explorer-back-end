@@ -4,7 +4,8 @@
   "description": "The application we developed is a digital menu for a fictional restaurant, known as Food Explorer.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/server.js"
+    "dev": "nodemon ./src/server.js",
+    "migrate": "knex migrate:latest"
   },
   "keywords": [
     "explorer",
