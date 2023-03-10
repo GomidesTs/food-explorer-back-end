@@ -2,7 +2,7 @@ const sqlite = require('sqlite')
 const sqlite3 = require('sqlite3')
 const path = require('path')
 
-async function slqlteConnection() {
+async function sqliteConnection() {
     const database = await sqlite.open({
         filename: path.resolve(__dirname, '..', 'database.db'),
         driver: sqlite3.Database
@@ -11,4 +11,4 @@ async function slqlteConnection() {
     return database
 }
 
-module.exports = slqlteConnection
+module.exports = sqliteConnection
