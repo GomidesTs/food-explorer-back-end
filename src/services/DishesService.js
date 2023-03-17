@@ -90,7 +90,7 @@ class DishesService {
         let dishes
 
         if (ingredients) {
-            const filterIngredients = typeof ingredients === 'string' ? ingredients.split(',').map(ingredient => ingredient.trim()) : null;
+            const filterIngredients = typeof ingredients === 'string' ? ingredients.split(',').map(ingredient => ingredient.trim()) : null
 
             dishes = await this.dishesRepository.indexIngredients({ filterIngredients, title })
         } else {
