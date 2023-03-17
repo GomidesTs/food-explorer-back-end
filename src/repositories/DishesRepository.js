@@ -50,7 +50,7 @@ class DishesRepository {
     }
 
     async deleteIngredients({ dish_id }) {
-        const ingredientsDelete = await knex("ingredients")
+        const ingredientsDelete = await knex('ingredients')
             .where({
                 dish_id
             })
@@ -107,7 +107,7 @@ class DishesRepository {
     }
 
     async dishesIngredients() {
-        return await knex("ingredients")
+        return await knex('ingredients')
     }
 
     async ingredientsShow({ dish_id }) {

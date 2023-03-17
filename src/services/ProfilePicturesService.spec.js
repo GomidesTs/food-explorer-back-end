@@ -24,6 +24,6 @@ describe('ProfilePicturesService', () => {
     it('should throw an error when user is not authenticated', async () => {
         const avatarFilename = 'Avatar.png'
 
-        await expect(profilePicturesService.update({ id: 6, picture: avatarFilename })).rejects.toEqual(new AppError("Somente usuários autenticados podem mudar o avatar", 401))
+        await expect(profilePicturesService.update({ id: 6, picture: avatarFilename })).rejects.toEqual(new AppError('Somente usuários autenticados podem mudar o avatar', 401))
     })
 })

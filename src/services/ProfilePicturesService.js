@@ -10,7 +10,7 @@ class ProfilePicturesService {
         const checkUserExists = await this.profileRepository.show(id)
 
         if (!checkUserExists) {
-            throw new AppError("Somente usuários autenticados podem mudar o avatar", 401)
+            throw new AppError('Somente usuários autenticados podem mudar o avatar', 401)
         }
 
         const disckStorage = new DisckStorage()
