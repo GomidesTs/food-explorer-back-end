@@ -8,9 +8,9 @@ class SessionsController {
         const sessionsRepository = new SessionsRepository()
         const sessionsService = new SessionsService(sessionsRepository)
 
-        const token = await sessionsService.create({ email, password })
-
-        response.status(200).json(token)
+        const { user, token } = await sessionsService.create({ email, password })
+        
+        response.status(200).json({ user, token })
     }
 }
 module.exports = SessionsController

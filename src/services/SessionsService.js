@@ -28,7 +28,7 @@ class SessionsService {
             expiresIn
         })
 
-        return token
+        return { user:checkUserExists, token }
     }
 }
 
