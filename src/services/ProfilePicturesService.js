@@ -21,9 +21,9 @@ class ProfilePicturesService {
 
         const avatar = await disckStorage.saveFile(picture)
 
-        const avatarUpdated = await this.profileRepository.update({ id, avatar })
+        await this.profileRepository.update({ id, avatar })
 
-        return avatarUpdated
+        return { avatar }
     }
 }
 

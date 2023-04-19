@@ -11,11 +11,9 @@ class ProfilePicturesRepository {
 
     async update({ id, avatar }) {
         const avatarUpdated = await knex('users')
-            .where('id', id)
-            .update({
-                avatar
-            })
-
+            .where({ id })
+            .update({ avatar })
+            
         return avatarUpdated
     }
 

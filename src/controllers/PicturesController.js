@@ -9,9 +9,8 @@ class ProfilePicturesController {
         const profilePicturesRepository = new ProfilePicturesRepository()
         const profilePicturesService = new ProfilePicturesService(profilePicturesRepository)
 
-        await profilePicturesService.update({ id: user_id, picture })
-
-        response.status(200).json()
+        const avatar = await profilePicturesService.update({ id: user_id, picture })
+        response.status(200).json(avatar)
     }
 }
 
