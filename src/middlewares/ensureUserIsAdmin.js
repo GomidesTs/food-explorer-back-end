@@ -9,7 +9,7 @@ async function ensureUserIsAdmin(request, response, next) {
     const checkUserIsAdmin = await usersRepository.show({ id: user_id })
 
     if (!checkUserIsAdmin.isAdmin) {
-        throw new AppError('Usuário não autorizado para realizar estação', 401)
+        throw new AppError('Usuário não autorizado para realizar esta ação', 401)
     }
 
     next()
