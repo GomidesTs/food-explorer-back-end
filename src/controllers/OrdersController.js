@@ -33,7 +33,7 @@ class OrdersController {
 
         const orders = await ordersService.index({ user_id })
 
-        response.status(200).json({ orders })
+        response.status(200).json( orders )
     }
 }
 
