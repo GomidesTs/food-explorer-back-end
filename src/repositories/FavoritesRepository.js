@@ -1,7 +1,6 @@
 const knex = require('../database/knex')
 
 class FavoritesRepository {
-
     async create({ user_id, dish_id }) {
         const favoriteCreate = await knex('favorites')
             .insert({
@@ -23,14 +22,11 @@ class FavoritesRepository {
         return favorites
     }
 
-    async indexIngredients({ user_id, filterIngredients, title }) {
+    async indexIngredients({filterIngredients, title }) {
         const favorites = await knex('ingredients')
             .select([
                 'dishes.id',
                 'dishes.title',
-                'dishes.description',
-                'dishes.category',
-                'dishes.price',
                 'dishes.image',
                 'ingredients.name'
             ])
@@ -57,9 +53,6 @@ class FavoritesRepository {
             .select([
                 'dishes.id',
                 'dishes.title',
-                'dishes.description',
-                'dishes.category',
-                'dishes.price',
                 'dishes.image'
             ])
             .where({
@@ -84,9 +77,6 @@ class FavoritesRepository {
             .select([
                 'dishes.id',
                 'dishes.title',
-                'dishes.description',
-                'dishes.category',
-                'dishes.price',
                 'dishes.image',
             ])
             .where({
