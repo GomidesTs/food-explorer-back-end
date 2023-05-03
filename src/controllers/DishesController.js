@@ -5,7 +5,7 @@ class DishesController {
     async create(request, response) {
         const { title, description, category, price, ingredients } = request.body
         const image = request.file.filename
-
+        
         const dishesRepository = new DishesRepository()
         const dishesService = new DishesService(dishesRepository)
 
