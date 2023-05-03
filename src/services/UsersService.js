@@ -20,7 +20,7 @@ class UsersService {
     }
 
     async update({ id, name, email, password, oldPassword }) {
-        const checkUserExists = await this.usersRepository.show(id)
+        const checkUserExists = await this.usersRepository.show({ id })
 
         if (!checkUserExists) {
             throw new AppError('Usuário não encontrado', 404)
@@ -49,14 +49,12 @@ class UsersService {
             if (!checkOldPassword) {
                 throw new AppError('Senha antiga não confere', 403)
             }
-            password = await  hash(password, 8)
+            password = await hash(password, 8)
         }
 
-        
-        
-        const userUpdated = await this.usersRepository.update({ id, name, email, password })
+        await this.usersRepository.update({ id, name, email, password })
 
-        return userUpdated
+        return
     }
 
 }
