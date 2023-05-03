@@ -3,7 +3,7 @@ const multer = require('multer')
 
 const uploadConfig = require('../configs/upload')
 const UsersController = require('../controllers/UsersController')
-const ProfilePicturesController = require('../controllers/ProfilePicturesProfilePicturesController')
+const ProfilePicturesController = require('../controllers/PicturesController')
 const ensureAuthenticated = require('../middlewares/ensureAuthenticated')
 
 const usersController = new UsersController()
