@@ -12,7 +12,7 @@ class OrdersService {
       return {
         title: item.title,
         quantity: item.quantity,
-        dish_id: item.id,
+        dish_id: item.dish_id,
         order_id
       }
     })
@@ -39,8 +39,9 @@ class OrdersService {
     const ordersItems = await this.ordersRepository.indexOrdersItems()
     let orders
 
-    if (checkUserIsAdmin) {
+    if (checkUserIsAdmin.isAdmin === 1) {
       orders = await this.ordersRepository.indexOrdersAdmin()
+
     } else {
       orders = await this.ordersRepository.indexOrdersNoAdmin({ user_id })
     }
