@@ -36,14 +36,13 @@ As seguintes tecnologias foram empregadas na no desenvolvimento do back-end:
 Clone o projeto para o local desejado em seu computador.
 
 ```bash
-git clone git@github.com:GomidesTs/food-explorer-back-end.git
+git clone https://github.com/GomidesTs/food-explorer-back-end.git
 ```
 
 Execute o back-end
 
 ```bash
-# Na raiz do projeto renomeie o arquivo .env.example para .env e insira uma porta para a aplicação rodar e um secret para utilizar o jwt no projeto
-  
+# Na raiz do projeto renomeie o arquivo .env.example para .env e insira uma porta para a aplicação rodar e um secret para utilizar o jwt no projeto 
 PORT =
 AUTH_SECRET =
 
@@ -66,12 +65,13 @@ Você observará a união desse repositório com o [front-end](https://github.co
 
 ### Quer ver como a aplicação funciona vista pelo administrador? Use a conta a seguir
 
-`e-mail: admin@foodexplorer.com`
-`senha: rocketseat`
+`e-mail: admin@foodexplorer.com` `senha: rocketseat`
 
-Este projeto foi hospedado no [Render](https://render.com/), um serviço de hospedagem gratuito. É importante ressaltar que, por estar hospedado em um serviço gratuito, o back-end entra em estado de hibernação após 15 minutos sem utilização. Caso o usuário tente acessar o site e o back-end não responda, é necessário aguardar um pouco, pois ele estará "inicializando" os serviços novamente. Essa etapa pode levar até 1 minuto, dependendo da carga nos servidores do Render. É importante destacar que esse tempo de inicialização pode afetar o desempenho da aplicação, especialmente em períodos de alta demanda.
+O servidor deste projeto foi hospedado no [Render](https://render.com/), um serviço de hospedagem gratuito. É importante ressaltar que, por estar hospedado em um serviço gratuito, o back-end entra em estado de hibernação após 15 minutos sem utilização. Caso o usuário tente acessar o site e o back-end não responda, é necessário aguardar um pouco, pois ele estará "inicializando" os serviços novamente. Essa etapa pode levar até 1 minuto, dependendo da carga nos servidores do Render. É importante destacar que esse tempo de inicialização pode afetar o desempenho da aplicação, especialmente em períodos de alta demanda.
 
-[O resultado FINAL pode ser visto aqui](https://)
+Por outro lado, o front-end foi hospedado na plataforma [Netlify](https://www.netlify.com/), que permite hospedar sites e aplicativos web de forma gratuita. Para que o front-end funcione corretamente, é fundamental que o servidor de back-end esteja em funcionamento e respondendo corretamente. Caso contrário, o front-end pode apresentar erros ou comportamentos inesperados.
+
+[O resultado FINAL pode ser visto aqui](https://64556a8bd6cfc70008e4aebe--delicate-belekoy-60cb5c.netlify.app/)
 
 ## Executando Testes
 
