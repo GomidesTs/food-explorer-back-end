@@ -29,9 +29,9 @@ module.exports = {
       max: 10,
       afterCreate: (connection, callback) => connection.run('PRAGMA foreign_keys = ON', callback)
     },
-    // migrations: {
-    //   directory: path.resolve(__dirname, 'src', 'database', 'knex', 'migrations')
-    // },
+    migrations: {
+      directory: path.resolve(__dirname, 'src', 'database', 'knex', 'migrations')
+    },
     useNullAsDefault: true
   }
 }
