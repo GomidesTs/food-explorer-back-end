@@ -4,43 +4,32 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: path.resolve(__dirname,'src','database','database.db'),
-      foreign_keys: true
+      filename: path.resolve(__dirname, 'src', 'database', 'database.db')
     },
     pool: {
-      afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb)
+      min: 2,
+      max: 10,
+      afterCreate: (connection, callback) => connection.run('PRAGMA foreign_keys = ON', callback)
     },
-    useNullAsDefault: true,
     migrations: {
       directory: path.resolve(__dirname, 'src', 'database', 'knex', 'migrations')
-    }
-  },
-  staging: {
-    client: 'sqlite3',
-    connection: {
-      filename: path.resolve(__dirname,'src','database','database.db'),
     },
-    pool: {
-      afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb)
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: path.resolve(__dirname, 'src', 'database', 'knex', 'migrations')
-    }
+    useNullAsDefault: true
   },
+
   production: {
     client: 'sqlite3',
     connection: {
-      filename: path.resolve(__dirname,'src','database','database.db'),
-      foreign_keys: true
+      filename: path.resolve(__dirname, 'src', 'database', 'database.db')
     },
     pool: {
-      afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb)
+      min: 2,
+      max: 10,
+      afterCreate: (connection, callback) => connection.run('PRAGMA foreign_keys = ON', callback)
     },
-    useNullAsDefault: true,
     migrations: {
       directory: path.resolve(__dirname, 'src', 'database', 'knex', 'migrations')
-    }
+    },
+    useNullAsDefault: true
   }
-
 }
