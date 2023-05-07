@@ -2,6 +2,7 @@ const sqlite = require('sqlite')
 const sqlite3 = require('sqlite3')
 const path = require('path')
 const knex = require('../knex')
+const { hash } = require('bcryptjs')
 
 async function sqliteConnection() {
     const database = await sqlite.open({
@@ -17,8 +18,7 @@ async function sqliteConnection() {
         knex.insert({
             name: 'rocketseat',
             email: 'admin@foodexplorer.com',
-            password: 'rocketseat',
-            avatar: null,
+            password: await hash('rocketseat', 8),
             isAdmin: true
         }).into('users')
             .then(() => console.log('Usuário criado com sucesso'))
