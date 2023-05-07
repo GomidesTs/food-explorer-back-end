@@ -25,6 +25,18 @@ async function sqliteConnection() {
             .catch((err) => console.error(err))
     }
 
+    knex.raw("SELECT name FROM sqlite_master WHERE type='table'")
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+
+    knex.schema.raw("PRAGMA table_info(ingredients)").then((result) => {
+        console.log(result);
+    });
+
     return database
 }
 
