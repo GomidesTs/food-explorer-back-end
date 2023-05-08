@@ -33,9 +33,12 @@ class DishesService {
                 dish_id
             }))
 
-        const dish = await this.dishesRepository.insertIngredients(ingredientsInsert)
+            await Promise.all(ingredientsInsert.map(item => {
+                return this.dishesRepository.insertIngredients(item);
+              }))
 
-        return dish
+
+        return dish_id
     }
 
     async update({ id, title, description, category, price, ingredients, image }) {
