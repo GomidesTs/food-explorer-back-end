@@ -8,14 +8,12 @@ class OrdersService {
   async create({ user_id, cart, orderStatus, totalPrice, paymentMethod }) {
     const order_id = await this.ordersRepository.createOrder({ user_id, orderStatus, totalPrice, paymentMethod })
 
-    const orderItems = await cart.map(item => {
-      return {
-        title: item.title,
-        quantity: item.quantity,
-        dish_id: item.dish_id,
-        order_id
-      }
-    })
+    const orderItems = await cart.map(({ title, quantity, dish_id }) => ({
+      title,
+      quantity,
+      dish_id,
+      order_id
+    }))
 
     await this.ordersRepository.itemsInsert(orderItems)
 

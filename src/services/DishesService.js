@@ -21,21 +21,17 @@ class DishesService {
 
         const hasOnlyOneIngredient = typeof ingredients === 'string'
 
-        let ingredientsInsert
-
-        if (hasOnlyOneIngredient) {
-            ingredientsInsert = {
+        const ingredientsInsert = hasOnlyOneIngredient
+            ?
+            {
                 name: ingredients,
                 dish_id
             }
-        } else if (ingredients.length > 1) {
-            ingredientsInsert = ingredients.map((name) => {
-                return {
-                    name,
-                    dish_id
-                }
-            })
-        }
+            :
+            ingredients.map(name => ({
+                name,
+                dish_id
+            }))
 
         const dish = await this.dishesRepository.insertIngredients(ingredientsInsert)
 
@@ -123,7 +119,7 @@ class DishesService {
     async delete(id) {
         const checkDishesExists = await this.dishesRepository.findById(id)
 
-        if(!checkDishesExists){
+        if (!checkDishesExists) {
             throw new AppError('Prato não encontrado ')
         }
 
