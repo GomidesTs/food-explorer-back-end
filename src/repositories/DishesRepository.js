@@ -19,15 +19,15 @@ class DishesRepository {
 
     async create({ title, description, category, price, image }) {
         const [id] = await knex('dishes').insert({
-          title,
-          description,
-          category,
-          price,
-          image
+            title,
+            description,
+            category,
+            price,
+            image
         })
-      
+
         return id
-      }
+    }
 
     async insertIngredients(ingredients) {
         const ingredientsInsert = await knex('ingredients').insert(ingredients)
