@@ -10,14 +10,14 @@ class OrdersRepository {
     }
 
     async createOrder({ user_id, orderStatus, totalPrice, paymentMethod }) {
-        const order_id = await knex('orders').insert({
+        const [id] = await knex('orders').insert({
             user_id,
             orderStatus,
             totalPrice,
             paymentMethod
         })
 
-        return order_id
+        return id
     }
 
     async itemsInsert(orderItems) {
