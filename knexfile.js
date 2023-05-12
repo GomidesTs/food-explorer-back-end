@@ -10,7 +10,7 @@ module.exports = {
     pool: {
       min: 2,
       max: 10,
-      afterCreate: (connection, callback) => connection.run('PRAGMA foreign_keys = ON', callback)
+      afterCreate: (connection, callback) => connection.run('PRAGMA foreign_keys = OFF', callback)
     },
     migrations: {
       directory: path.resolve(__dirname, 'src', 'database', 'knex', 'migrations')
@@ -27,7 +27,7 @@ module.exports = {
     pool: {
       min: 2,
       max: 10,
-      afterCreate: (connection, callback) => connection.run('PRAGMA foreign_keys = ON', callback)
+      afterCreate: (connection, callback) => connection.run('PRAGMA foreign_keys = OFF', callback)
     },
     migrations: {
       directory: path.resolve(__dirname, 'src', 'database', 'knex', 'migrations')
