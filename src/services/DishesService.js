@@ -120,12 +120,12 @@ class DishesService {
         const checkDishesExists = await this.dishesRepository.findById(id)
 
         if (!checkDishesExists) {
-            throw new AppError('Prato não encontrado ')
+            throw new AppError('Prato não encontrado')
         }
 
         await this.dishesRepository.delete(id)
 
-        return 'prato deletado'
+        return 'Prato deletado'
     }
 }
 

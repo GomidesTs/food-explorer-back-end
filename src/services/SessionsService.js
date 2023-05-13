@@ -13,13 +13,13 @@ class SessionsService {
         const checkUserExists = await this.sessionsRepository.findByEmail(email)
 
         if (!checkUserExists) {
-            throw new AppError('Email e/ou senha incorretos', 401)
+            throw new AppError('E-mail e/ou senha incorretos', 401)
         }
 
         const passwordMatched = await compare(password, checkUserExists.password)
 
         if (!passwordMatched) {
-            throw new AppError('Email e/ou senha incorretos', 401)
+            throw new AppError('E-mail e/ou senha incorretos', 401)
         }
 
         const { secret, expiresIn } = authConfig.jwt

@@ -10,7 +10,7 @@ class UsersService {
         const checkUserExists = await this.usersRepository.findByEmail(email)
 
         if (checkUserExists) {
-            throw new AppError('Este email já existe', 409)
+            throw new AppError('Este e-mail já existe', 409)
         }
 
         const hashedPassword = await hash(password, 8)
@@ -32,7 +32,7 @@ class UsersService {
         const userWithUpdatedEmail = await this.usersRepository.findByEmail(email)
 
         if (userWithUpdatedEmail && userWithUpdatedEmail.id !== checkUserExists.id) {
-            throw new AppError('Este email já está em uso', 403)
+            throw new AppError('Este e-mail já está em uso', 403)
         }
 
         if (!password && oldPassword) {
